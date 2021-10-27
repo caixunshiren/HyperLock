@@ -76,3 +76,5 @@ We show the encrypted letters at different levels of crossbar noise in Fig. 4(b)
 # Conclusion
 Overall, we demonstrate a novel cryptography algorithm designed specifically for memristor crossbar. In image encryption experiment, we verified our hypothesis using binary hypervectors to control crossbar noise levels. We then developed a stochastic text encryption system, and demonstrated near 100% decryption accuracy in the text decryption with selected crossbar models. This work is a proof of concept of how memristor crossbars with its non-ideal nature can be used to directly encrypt data, paving the foundations for future works in this direction.
 
+# References
+[Reference here](https://github.com/caixunshiren/HyperLock/blob/main/paper/Reference.pdf)
