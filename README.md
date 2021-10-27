@@ -52,5 +52,27 @@ We show, in Fig. 3(a-c), the raw encryption result along with the change in pixe
 ![alt text](https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/Figure%203.png)
     **Fig. 3.**  Image encryption and decryption results. Image encryption result is on a 150 x 150 pixels Girl with a Pearl Earring image. (a) Raw image at three stages of encryption: before, after dimension expansion, and after threshold. (b) Pixel correlation at the three stages. (c) Adjacent pixel correlation at the three stages. Note that pixel correlation at the third stage is represented by a bar graph due to there are only 4 adjacent pixel combinations, namely: 0 - 0, 0 - 1, 1 - 0, 1 - 1. (d) Image decryption results: Reconstructed images at different level of dimension multiplier (the factor in which the input image vector dimension is expanded) in the stochastic encoding. (e) Reconstructed MNIST images at different standard deviations of Gaussian noise.
     
+# Text Encryption
+In this section, we generalize our proposed model to a text en/decryption model. The proposed model for this application is shown in Fig. 4(a).
+
+### Model Algorithm, Dataset and Simulation Setup
+The model is described by Algorithm 1. New model can be generated without new crossbar simply by regenerating secret vectors and run Train(). The dataset used in simulations are characters of 94 classes, corresponding to ASCII 32 to 126. Our training, validation, and test sets consist of 100K, 100K, and 10K of randomly generated characters from the 94 classes, respectively. We tested the above algorithm on a memristor crossbar array simulation based on PyTorch. Conductance variability is modeled based on Gaussian distribution and random stuck on/off memristors. Samples of crossbar hyperparameters are presented in Table 1 along with the test set decryption accuracy.
+
+<p align="center">
+  <img width="600" src="https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/alg1.png" alt="Equation (3)">
+</p>
+
+<p align="center">
+  <img width="800" src="https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/table1.png" alt="Equation (3)">
+</p>
+
+# Experimental Results
+We show the encrypted letters at different levels of crossbar noise in Fig. 4(b), with their corresponding decryption accuracy. Non-ideality within the memristor crossbar array makes the encoded BHV different at each pass, thereby ensuring the security of the encrypted text. In Fig. 4(c), we show the decryption performance on a crossbar with, 0.05 P_on and 0.05 P_off, at various levels of dimension multipliers and conductance variability. A model is considered ”good” if the result decryption accuracy is at least 99.9% on the test set. In Fig. 4(d), we show the decryption accuracy curves of various models. We simulated energy and time complexity on analog Ag:Si memristor crossbar and digital SRAM [23] at different crossbar sizes for the stochastic encoder with NeuroSim MLP [24]. Fig 4(e-f) compares the result. The Ag:Si memristor consumes 30X less energy than digital SRAM implementation while having consistent read latency at increasing VMM scale. In addition, digital implementation does not have the security advantage from crossbar non-ideality.
+
 ![alt text](https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/Figure%204.png)
     **Fig. 4.**  Application for Text Decryption and Encryption results.(a) Text en/decryption model. (b) Encrypted text by different level of noise within the memristor crossbar. Each column is a BHV and each letter (A, B, C, D and E) is encoded 200 times. Optimal model is achieved when both noise and decryption accuracy are high.(c) Decryption performance of models with various dimension multipliers and crossbar noise level. Grid search on 10 dimensional secret key models with 0.05 P_on and 0.05 P_off . ”Good” model (shaded) are those with decryption accuracy >= 99.9% on test set. (d) Decryption accuracy vs conductance variability for selected models. Note that more noise means more security for the encoded BHV, while less dimension multiplier means less computation cost. (e) Power and complexity analysis of memristor crossbar implementation. (f) Time and complexity analysis.
+
+
+# Conclusion
+Overall, we demonstrate a novel cryptography algorithm designed specifically for memristor crossbar. In image encryption experiment, we verified our hypothesis using binary hypervectors to control crossbar noise levels. We then developed a stochastic text encryption system, and demonstrated near 100% decryption accuracy in the text decryption with selected crossbar models. This work is a proof of concept of how memristor crossbars with its non-ideal nature can be used to directly encrypt data, paving the foundations for future works in this direction.
+
