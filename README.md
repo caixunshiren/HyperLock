@@ -24,7 +24,7 @@ Our proposed architecture (Fig. 2(b)) consists of a hyperdimensional stochastic 
 ### Hyperdimensional Stochastic Encoder
 The stochastic encoder is characterized by Equation (1), where W_encoder is a tall, randomly initialized matrix thatlinearly transforms the original low dimensional input vector x into a hypervector, f_noise(t,W_encoder,x) is some noise function that depends on time t, W_encoder, and x, and H is a binarization function defined by Equation (2), where epsilon is a hyperparameter. The result, x_bhv, is an encrypted binary hypervector.
 <p align="center">
-  <img width="200" src="https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/eq12.png" alt="Equation (1) & (2)">
+  <img width="600" src="https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/eq12.png" alt="Equation (1) & (2)">
 </p>
 The above formulation models the VMM of an intrinsic memristor crossbar array followed by a threshold. The randomly initialized matrix Wencoder can be thought as an untuned memristor crossbar, and the noise function fnoise(t;Wencoder; x) are the crossbar non-idealities which depend on the crossbar conductance (finite conductance states and conductance variability), input voltage vectors (e.g. sneak path current), and time (cycle to cycle variability).
 The intuition behind a hyperdimensional stochastic encoder is that the VMM operation will create hypervectors, evenly distributes input vector’s information across all entries. As a result, information at each entry can be represented by binary states. On the other hand, impact on performance from noise reduces as the dimension of the BHV gets larger. By altering the output dimension of the stochastic encoder, we control the level of noise presented in the encrypted BHV.
