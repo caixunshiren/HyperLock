@@ -20,6 +20,9 @@ Binary hypervectors (BHV), first introduced by Kanerva [5] in his model of hyper
 ![alt text](https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/Figure%202.png)
     **Fig. 2.**  (a) Binary hypervector representation versus real vector representation. (b)Proposed model architecture schematic for in-memory hyperdimensional encryption. (c) Image encryption and decryption implementation.
     
+
+    
+    
 ![alt text](https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/Figure%203.png)
     **Fig. 3.**  Image encryption and decryption results. Image encryption result is on a 150 x 150 pixels Girl with a Pearl Earring image. (a) Raw image at three stages of encryption: before, after dimension expansion, and after threshold. (b) Pixel correlation at the three stages. (c) Adjacent pixel correlation at the three stages. Note that pixel correlation at the third stage is represented by a bar graph due to there are only 4 adjacent pixel combinations, namely: 0 - 0, 0 - 1, 1 - 0, 1 - 1. (d) Image decryption results: Reconstructed images at different level of dimension multiplier (the factor in which the input image vector dimension is expanded) in the stochastic encoding. (e) Reconstructed MNIST images at different standard deviations of Gaussian noise.
     
