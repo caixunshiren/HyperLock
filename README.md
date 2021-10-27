@@ -18,7 +18,7 @@ A typical structure of a crossbar is shown in Fig. 1, where memristors are progr
 Binary hypervectors (BHV), first introduced by Kanerva [5] in his model of hyperdimensional (HD) computing, are binary vectors with dimensions in the orders of thousands. Unlike traditional real-valued vectors that are optimized for space, BHVs are optimized for robustness. In BHV, information is distributed evenly across all entries. Such representation provides resilience against noise, non-ideality, and low resolution in computer hardware as randomly flipping one bit of information has almost no impact on the vector’s representation [22]. Since the information is evenly spread, BHV can be more robust when its dimension is increased. Real valued vectors, on the other hand, are prone to these noises, as failure at a critical bit can change the vector’s representation significantly. Fig. 2(a) contrast the two vectors.
 
 ![alt text](https://github.com/caixunshiren/HyperLock/blob/main/figure/paper/Figure%202.png)
-    **Fig. 2.**  (a) Binary hypervector representation versus real vector representation. (b)Proposed model architecture schematic for in-memory hyperdimensional encryption. (c) Image encryption and decryption implementation.
+    **Fig. 2.**  (a) Binary hypervector representation versus real vector representation. (b) Proposed model architecture schematic for in-memory hyperdimensional encryption. (c) Image encryption and decryption implementation.
     
 
     
